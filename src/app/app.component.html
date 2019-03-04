@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div style="text-align:center">
+  <h1>
+    {{ title }}!
+  </h1>
+  <div>
+    <button (click)="getPosts()"> Get Posts!</button>
+  </div>
+
+    <div>
+
+    <app-search-bar (selectedOption)="selectedOption($event)"></app-search-bar>
+
+    </div>
+    <h2 style="text-align:center">Data</h2>
+    <div *ngFor="let post of posts | async" class="group">
+      <p><b>Title :</b> {{post.title}}</p>
+      <p><b>Body: </b>{{post.body}}</p>
+    </div>
+
+
+</div>
